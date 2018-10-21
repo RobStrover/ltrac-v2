@@ -3,6 +3,23 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+    module: {
+        rules: [
+            // ... other rules omitted
+
+            // this will apply to both plain `.scss` files
+            // AND `<style lang="scss">` blocks in `.vue` files
+            {
+                test: /\.scss$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
+        ]
+    },
+
   /*
   ** Headers of the page
   */
@@ -59,15 +76,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+      
     }
   }
 }
