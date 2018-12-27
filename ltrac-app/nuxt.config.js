@@ -1,4 +1,5 @@
-const pkg = require('./package')
+const pkg = require('./package');
+require('dotenv').config();
 
 module.exports = {
   mode: 'universal',
@@ -38,7 +39,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: false,
 
   /*
   ** Global CSS
@@ -59,13 +60,19 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/toast',
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  toast: {
+      position: 'bottom-center'
   },
 
   /*

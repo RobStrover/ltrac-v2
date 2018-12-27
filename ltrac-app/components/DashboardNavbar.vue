@@ -12,6 +12,7 @@
         <template slot="button-content">
           <em>Emma</em>
         </template>
+        <b-dropdown-item href="#">Settings</b-dropdown-item>
         <b-dropdown-item href="#">Signout</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
